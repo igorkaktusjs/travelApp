@@ -22,8 +22,8 @@ const MainNavigator = () => {
           options={{
             headerShown: false,
             useNativeDriver: true,
-          }}
-        />
+            gestureEnabled: false
+          }}/>
         <Stack.Screen
           name="TripDetails"
           component={TripDetailsScreen}

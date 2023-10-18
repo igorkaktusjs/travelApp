@@ -6,41 +6,45 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {SharedElement} from 'react-navigation-shared-element';
 import TripDetailsCard from "../components/TripDetailsCard";
 import * as Animatable from 'react-native-animatable'
+import TripDetailsCorousel from "../components/TripDetailsCorousel";
 
 
 
-const TripDetailsScreen = ({ navigation, route }) => {
-  const insets = useSafeAreaInsets();
-  const {trip} = route.params;
-
-  return (
-    <View style={styles.container}>
-      <Animatable.View 
-      animation='fadeIn'
-      delay={500}
-      duration={500}
-      easing='ease-in-out'
-      style={[styles.backButton, {marginTop: insets.top}]}
-      
-      >
-        <Icon icon="ArrowLeft" style={styles.backIcon} onPress={navigation.goBack}/>
-      </Animatable.View>
-      <SharedElement
-        id={`trip.${trip.id}.image`}
-        style={StyleSheet.absoluteFillObject}>
-        <View style={[StyleSheet.absoluteFillObject, styles.imageBox]}>
-          <Image
-            source={trip.image}
-            style={[StyleSheet.absoluteFillObject, styles.image]}
+const TripDetailsScreen = ({navigation, route}) => {
+    const insets = useSafeAreaInsets();
+    const {trip} = route.params;
+    const slides = [trip.image, ...trip.gallery];
+    return (
+      <View style={styles.container}>
+        <Animatable.View
+          style={[styles.backButton, {marginTop: insets.top}]}
+          animation="fadeIn"
+          delay={500}
+          duration={400}
+          easing="ease-in-out">
+          <Icon
+            icon="ArrowLeft"
+            style={styles.backIcon}
+            onPress={navigation.goBack}
           />
-        </View>
-      </SharedElement>
-      <TripDetailsCard trip={trip}/>
-    </View>
-  );
-};
-
-TripDetailsScreen.sharedElements = route => {
+        </Animatable.View>
+        <TripDetailsCorousel slides={slides}/>
+        {/* <SharedElement
+          id={`trip.${trip.id}.image`}
+          style={StyleSheet.absoluteFillObject}>
+          <View style={[StyleSheet.absoluteFillObject, styles.imageBox]}>
+            <Image
+              source={trip.image}
+              style={[StyleSheet.absoluteFillObject, styles.image]}
+            />
+          </View>
+        </SharedElement> */}
+        <TripDetailsCard trip={trip} />
+      </View>
+    );
+  };
+  
+  TripDetailsScreen.sharedElements = route => {
     const {trip} = route.params;
     return [
       {
