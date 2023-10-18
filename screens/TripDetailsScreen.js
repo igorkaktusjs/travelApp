@@ -3,33 +3,51 @@ import { Text, View, StyleSheet, Image } from "react-native";
 import { sizes, spacing, colors } from "../constants/theme";
 import Icon from "../components/icon";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import {SharedElement} from 'react-navigation-shared-element';
+import TripDetailsCard from "../components/TripDetailsCard";
+import * as Animatable from 'react-native-animatable'
+
+
 
 const TripDetailsScreen = ({ navigation, route }) => {
   const insets = useSafeAreaInsets();
-  const { trip } = route.params;
+  const {trip} = route.params;
+
   return (
     <View style={styles.container}>
-      <View style={[styles.backButton, {marginTop: insets.top}]}>
+      <Animatable.View 
+      animation='fadeIn'
+      delay={500}
+      duration={500}
+      easing='ease-in-out'
+      style={[styles.backButton, {marginTop: insets.top}]}
+      
+      >
         <Icon icon="ArrowLeft" style={styles.backIcon} onPress={navigation.goBack}/>
-      </View>
-      <View style={[StyleSheet.absoluteFillObject, styles.imageBox]}>
-        <Image
-          source={trip.image}
-          style={[StyleSheet.absoluteFillObject, styles.image]}
-        />
-      </View>
+      </Animatable.View>
+      <SharedElement
+        id={`trip.${trip.id}.image`}
+        style={StyleSheet.absoluteFillObject}>
+        <View style={[StyleSheet.absoluteFillObject, styles.imageBox]}>
+          <Image
+            source={trip.image}
+            style={[StyleSheet.absoluteFillObject, styles.image]}
+          />
+        </View>
+      </SharedElement>
+      <TripDetailsCard trip={trip}/>
     </View>
   );
 };
 
-TripDetailsScreen.sharedElement = route => {
+TripDetailsScreen.sharedElements = route => {
     const {trip} = route.params;
     return [
-        {
-            id: `trip.${trip.id}.image`,
-        }
-    ]
-}
+      {
+        id: `trip.${trip.id}.image`,
+      },
+    ];
+  };
 
 const styles = StyleSheet.create({
   container: {
