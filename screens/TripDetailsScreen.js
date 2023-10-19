@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {SharedElement} from 'react-navigation-shared-element';
 import TripDetailsCard from "../components/TripDetailsCard";
 import * as Animatable from 'react-native-animatable'
-import TripDetailsCorousel from "../components/TripDetailsCorousel";
+import TripDetailsCarousel from "../components/TripDetailsCarousel";
 
 
 
@@ -28,7 +28,7 @@ const TripDetailsScreen = ({navigation, route}) => {
             onPress={navigation.goBack}
           />
         </Animatable.View>
-        <TripDetailsCorousel slides={slides}/>
+        <TripDetailsCarousel slides={slides} id={trip.id}/>
         {/* <SharedElement
           id={`trip.${trip.id}.image`}
           style={StyleSheet.absoluteFillObject}>
