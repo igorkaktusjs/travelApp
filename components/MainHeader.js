@@ -2,7 +2,7 @@ import react from "react";
 import { Text, View, StyleSheet} from 'react-native';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { spacing, sizes } from "../constants/theme";
-import Icon from "./icon";
+import Icon from "../components/shared/icon";
 
 const MainHeader = ({title}) => {
 

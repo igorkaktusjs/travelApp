@@ -5,7 +5,7 @@ import ScreenHeader from "../components/ScreenHeader";
 import TopPlacesCarousel from "../components/TopPlacesCarousel";
 import { colors } from "../constants/theme";
 import { TOP_PLACES, PLACES } from "../data/index";
-import SectionHeader from "../components/SectionHeader";
+import SectionHeader from "../components/shared/SectionHeader";
 import TripsList from "../components/TripsList";
 
 const HomeScreen = () => {
