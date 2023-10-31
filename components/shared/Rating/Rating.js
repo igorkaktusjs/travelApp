@@ -22,6 +22,7 @@ const Rating = ({
       style={[styles.container, containerStyle].concat(
         showLabelInline ? styles.containerRow : null,
       )}>
+        
       {showLabelTop && (
         <Text style={styles.label}>
           {getRatingLabel(_rating)} {getFractionDigitsRating(rating)}

@@ -36,7 +36,7 @@ const HotelsCarousel = ({hotels}) => {
               </View>
               <View style={styles.priceBox}>
                 <Text style={styles.price}>{item.pricePeerDay}</Text>
-                <Text style={styles.priceCaption}>peer day</Text>
+                <Text style={styles.priceCaption}>per day</Text>
               </View>
             </CardContent>
           </Card>

@@ -12,11 +12,12 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
-import Icon from '../shared/icon';
+import Icon from '../shared/Icon';
 import Divider from '../shared/Divider';
 import SectionHeader from '../shared/SectionHeader';
 import RatingOverall from '../shared/Rating/RatingOverall';
 import HotelsCarousel from './HotelsCarousel';
+import Reviews from '../Reviews/Reviews';
 
 const AnimatedDivider = Animated.createAnimatedComponent(Divider);
 
@@ -128,11 +129,18 @@ const TripDetailsCard = ({trip}) => {
             title="Hotels"
             containerStyle={styles.sectionHeader}
             titleStyle={styles.sectionTitle}
-            // onPress={() => {}}
+             onPress={() => {}}
             buttonTitle="See All"
           />
         <HotelsCarousel hotels={trip.hotels} />
-         
+        <SectionHeader
+            title="Reviews"
+            containerStyle={styles.sectionHeader}
+            titleStyle={styles.sectionTitle}
+             onPress={() => {}}
+            buttonTitle="See All"
+          />
+        <Reviews reviews={trip.reviews}/>
           
         </Animated.View>
       </BottomSheetScrollView>

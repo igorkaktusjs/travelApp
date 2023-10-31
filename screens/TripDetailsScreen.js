@@ -1,12 +1,13 @@
 import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { sizes, spacing, colors } from "../constants/theme";
-import Icon from "../components/shared/icon";
+import Icon from "../components/shared/Icon";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {SharedElement} from 'react-navigation-shared-element';
 import TripDetailsCard from "../components/TripDetailCard/TripDetailsCard";
 import * as Animatable from 'react-native-animatable'
 import TripDetailsCarousel from "../components/TripDetailsCarousel";
+import FavoriteButton from "../components/FavoriteButton";
 
 
 
@@ -27,6 +28,14 @@ const TripDetailsScreen = ({navigation, route}) => {
             style={styles.backIcon}
             onPress={navigation.goBack}
           />
+        </Animatable.View>
+        <Animatable.View
+          style={[styles.favoriteButton, {marginTop: insets.top}]}
+          animation="fadeIn"
+          delay={500}
+          duration={400}
+          easing="ease-in-out">
+          <FavoriteButton onPress={() => {}}/>
         </Animatable.View>
         <TripDetailsCarousel slides={slides} id={trip.id}/>
         {/* {  <SharedElement
@@ -74,6 +83,11 @@ const styles = StyleSheet.create({
   },
   backIcon: {
       tintColor: colors.white
+  },
+  favoriteButton: {
+    position: 'absolute',
+    right: spacing.l,
+    zIndex: 1
   }
 });
 
