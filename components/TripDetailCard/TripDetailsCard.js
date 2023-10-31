@@ -128,10 +128,10 @@ const TripDetailsCard = ({trip}) => {
             title="Hotels"
             containerStyle={styles.sectionHeader}
             titleStyle={styles.sectionTitle}
-            onPress={() => {}}
+            // onPress={() => {}}
             buttonTitle="See All"
           />
-
+        <HotelsCarousel hotels={trip.hotels} />
          
           
         </Animated.View>

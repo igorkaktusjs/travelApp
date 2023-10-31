@@ -5,7 +5,7 @@ import Card from '../shared/Card/Card';
 import CardMedia from '../shared/Card/CardMedia';
 import CardContent from '../shared/Card/CardContent';
 import {colors, sizes, spacing} from '../../constants/theme';
-import Icon from '../shared/icon';
+import Icon from '../shared/Icon';
 import Rating from '../shared/Rating/Rating';
 import CardFavoriteIcon from '../shared/Card/CardFavoriteIcon';
 
