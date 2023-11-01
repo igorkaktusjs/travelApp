@@ -7,14 +7,14 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { spacing, sizes, shadow, colors } from "../constants/theme";
-import FavoriteButton from "./FavoriteButton";
+import { spacing, sizes, shadow, colors } from "../../constants/theme";
+import FavoriteButton from "../shared/FavoriteButton";
 import { useNavigation } from "@react-navigation/native";
 import {SharedElement} from 'react-navigation-shared-element';
-import Carousel from "./shared/Carousel";
-import Card from "./shared/Card/Card";
-import CardMedia from "./shared/Card/CardMedia";
-import CardFavoriteIcon from './shared/Card/CardFavoriteIcon';
+import Carousel from "../shared/Carousel";
+import Card from "../shared/Card/Card";
+import CardMedia from "../shared/Card/CardMedia";
+import CardFavoriteIcon from '../shared/Card/CardFavoriteIcon';
 
 const CARD_WIDTH = sizes.width - 100;
 const CARD_HEIGHT = 200;

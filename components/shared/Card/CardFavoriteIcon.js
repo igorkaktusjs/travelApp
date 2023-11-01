@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import FavoriteButton from '../../FavoriteButton';
+import FavoriteButton from '../FavoriteButton';
 
 const CardFavoriteIcon = ({active, onPress}) => {
   return (

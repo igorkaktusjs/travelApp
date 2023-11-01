@@ -36,6 +36,7 @@ export const HOTELS = {
     location: 'Turkey, Cappadocia',
     rating: 9,
     pricePeerDay: '130$',
+    type: 'HOTEL',
   },
   2: {
     id: 2,
@@ -44,6 +45,7 @@ export const HOTELS = {
     location: 'Turkey, Cappadocia',
     rating: 9.3,
     pricePeerDay: '230$',
+    type: 'HOTEL',
   },
   3: {
     id: 3,
@@ -52,6 +54,7 @@ export const HOTELS = {
     location: 'Italy, Capri',
     rating: 9.4,
     pricePeerDay: '280$',
+    type: 'HOTEL',
   },
   4: {
     id: 4,
@@ -60,6 +63,7 @@ export const HOTELS = {
     location: 'Italy, Capri',
     rating: 9.3,
     pricePeerDay: '190$',
+    type: 'HOTEL',
   },
   5: {
     id: 5,
@@ -68,6 +72,8 @@ export const HOTELS = {
     location: 'Polynesia, Bora Bora',
     rating: 9.2,
     pricePeerDay: '250$',
+    type: 'HOTEL',
+
   },
   6: {
     id: 6,
@@ -76,6 +82,7 @@ export const HOTELS = {
     location: 'Polynesia, Bora Bora',
     rating: 9.4,
     pricePeerDay: '270$',
+    type: 'HOTEL',
   },
   7: {
     id: 7,
@@ -84,6 +91,7 @@ export const HOTELS = {
     location: 'Thailand, Phuket',
     rating: 9.2,
     pricePeerDay: '210$',
+    type: 'HOTEL',
   },
   8: {
     id: 8,
@@ -92,6 +100,7 @@ export const HOTELS = {
     location: 'Thailand, Phuket',
     rating: 9.4,
     pricePeerDay: '430$',
+    type: 'HOTEL',
   },
   9: {
     id: 9,
@@ -100,6 +109,7 @@ export const HOTELS = {
     location: 'Italy, Amalfi Coast',
     rating: 9.2,
     pricePeerDay: '330$',
+    type: 'HOTEL',
   },
   10: {
     id: 10,
@@ -108,6 +118,7 @@ export const HOTELS = {
     location: 'Italy, Amalfi Coast',
     rating: 9.4,
     pricePeerDay: '350$',
+    type: 'HOTEL',
   },
   11: {
     id: 11,
@@ -116,6 +127,7 @@ export const HOTELS = {
     location: 'Spain, Granada',
     rating: 9.2,
     pricePeerDay: '230$',
+    type: 'HOTEL',
   },
   12: {
     id: 12,
@@ -124,6 +136,7 @@ export const HOTELS = {
     location: 'Spain, Granada',
     rating: 9.4,
     pricePeerDay: '120$',
+    type: 'HOTEL',
   },
 
   13: {
@@ -133,6 +146,7 @@ export const HOTELS = {
     location: 'Japan, Cherry blossoms',
     rating: 9.2,
     pricePeerDay: '740$',
+    type: 'HOTEL',
   },
   14: {
     id: 14,
@@ -141,6 +155,7 @@ export const HOTELS = {
     location: 'Japan, Cherry blossoms',
     rating: 9.4,
     pricePeerDay: '240$',
+    type: 'HOTEL',
   },
 };
 
@@ -159,6 +174,7 @@ export const TOP_PLACES = [
     ],
     reviews: [REVIEWS[2], REVIEWS[1]],
     hotels: [HOTELS[9], HOTELS[10]],
+    type: 'PLACE',
   },
   {
     id: 4,
@@ -171,6 +187,7 @@ export const TOP_PLACES = [
     gallery: [],
     reviews: [REVIEWS[1], REVIEWS[2]],
     hotels: [HOTELS[11], HOTELS[12]],
+    type: 'PLACE',
   },
   {
     id: 6,
@@ -183,6 +200,7 @@ export const TOP_PLACES = [
     gallery: [],
     reviews: [REVIEWS[1], REVIEWS[2]],
     hotels: [HOTELS[13], HOTELS[14]],
+    type: 'PLACE',
   },
 ];
 
@@ -202,6 +220,7 @@ export const PLACES = [
     ],
     reviews: [REVIEWS[1], REVIEWS[2]],
     hotels: [HOTELS[1], HOTELS[2]],
+    type: 'PLACE',
   },
   {
     id: 2,
@@ -214,6 +233,7 @@ export const PLACES = [
     gallery: [],
     reviews: [REVIEWS[2], REVIEWS[1]],
     hotels: [HOTELS[3], HOTELS[4]],
+    type: 'PLACE',
   },
   {
     id: 3,
@@ -226,6 +246,7 @@ export const PLACES = [
     gallery: [],
     reviews: [REVIEWS[1], REVIEWS[2]],
     hotels: [HOTELS[5], HOTELS[6]],
+    type: 'PLACE',
   },
   {
     id: 7,
@@ -238,5 +259,18 @@ export const PLACES = [
     gallery: [],
     reviews: [REVIEWS[2], REVIEWS[1]],
     hotels: [HOTELS[7], HOTELS[8]],
+    type: 'PLACE',
   },
 ];
+
+export const SEARCH_PLACES = [...PLACES, ...TOP_PLACES].map(item => ({
+  ...item,
+  id: Math.random().toString(),
+}));
+
+export const SEARCH_HOTELS = [...Object.values(HOTELS)].map(item => ({
+  ...item,
+  id: Math.random().toString(),
+}));
+
+export const SEARCH_ALL = [...SEARCH_PLACES, ...SEARCH_HOTELS];

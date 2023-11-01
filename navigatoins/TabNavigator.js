@@ -8,6 +8,7 @@ import Icon from '../components/shared/Icon';
 import {colors, sizes} from '../constants/theme';
 import {StyleSheet, Animated} from 'react-native';
 import HomeNavigator from './HomeNavigator';
+import SearchNavigator from './SearchNavigator';
 
 
 const tabs = [
@@ -17,7 +18,7 @@ const tabs = [
   },
   {
     name: 'Search',
-    screen: SearchScreen,
+    screen: SearchNavigator,
   },
   {
     name: 'Favorite',

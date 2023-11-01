@@ -1,13 +1,13 @@
 import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
-import { sizes, spacing, colors } from "../constants/theme";
+import { sizes, spacing, colors, shadow } from "../constants/theme";
 import Icon from "../components/shared/Icon";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {SharedElement} from 'react-navigation-shared-element';
-import TripDetailsCard from "../components/TripDetailCard/TripDetailsCard";
+import TripDetailsCard from "../components/TripDetails/TripDetailCard/TripDetailsCard";
 import * as Animatable from 'react-native-animatable'
-import TripDetailsCarousel from "../components/TripDetailsCarousel";
-import FavoriteButton from "../components/FavoriteButton";
+import TripDetailsCarousel from "../components/TripDetails/TripDetailsCarousel";
+import FavoriteButton from "../components/shared/FavoriteButton";
 
 
 
@@ -24,10 +24,11 @@ const TripDetailsScreen = ({navigation, route}) => {
           duration={400}
           easing="ease-in-out">
           <Icon
-            icon="ArrowLeft"
-            style={styles.backIcon}
-            onPress={navigation.goBack}
-          />
+          icon="Back"
+          viewStyle={styles.backIcon}
+          size={24}
+          onPress={navigation.goBack}
+        />
         </Animatable.View>
         <Animatable.View
           style={[styles.favoriteButton, {marginTop: insets.top}]}
@@ -38,16 +39,6 @@ const TripDetailsScreen = ({navigation, route}) => {
           <FavoriteButton onPress={() => {}}/>
         </Animatable.View>
         <TripDetailsCarousel slides={slides} id={trip.id}/>
-        {/* {  <SharedElement
-          id={`trip.${trip.id}.image`}
-          style={StyleSheet.absoluteFillObject}>
-          <View style={[StyleSheet.absoluteFillObject, styles.imageBox]}>
-            <Image
-              source={trip.image}
-              style={[StyleSheet.absoluteFillObject, styles.image]}
-            />
-          </View>
-        </SharedElement> } */}
         <TripDetailsCard trip={trip} />
       </View>
     );
@@ -82,7 +73,10 @@ const styles = StyleSheet.create({
 
   },
   backIcon: {
-      tintColor: colors.white
+    backgroundColor: colors.white,
+    padding: 4,
+    borderRadius: sizes.radius,
+    ...shadow.light,
   },
   favoriteButton: {
     position: 'absolute',
