@@ -1,4 +1,4 @@
-TravelApp
+
 TravelApp is a mobile application that revolutionizes the way you plan and experience your trips. If you're looking for the perfect accommodation, whether it's a cozy cottage in the woods, a luxury city apartment, or a beachfront villa, TravelApp is your go-to travel companion.
 
 
