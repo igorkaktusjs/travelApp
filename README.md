@@ -1,5 +1,5 @@
 TravelApp
-TravelBnB is a mobile application that revolutionizes the way you plan and experience your trips. If you're looking for the perfect accommodation, whether it's a cozy cottage in the woods, a luxury city apartment, or a beachfront villa, TravelBnB is your go-to travel companion.
+TravelApp is a mobile application that revolutionizes the way you plan and experience your trips. If you're looking for the perfect accommodation, whether it's a cozy cottage in the woods, a luxury city apartment, or a beachfront villa, TravelApp is your go-to travel companion.
 
 
 Key Features:
@@ -10,7 +10,7 @@ Key Features:
 * Wish Lists: Save your favorite listings to plan future trips.
 * 
 
-TravelBnB is all about making your travel dreams a reality. Find your ideal home away from home, and let your adventure begin!
+TravelApp is all about making your travel dreams a reality. Find your ideal home away from home, and let your adventure begin!
 
 Installation:
 * Will be available  the App Store (iOS) or Google Play Store (Android).
